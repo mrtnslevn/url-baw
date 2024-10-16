@@ -1,0 +1,504 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <script>
+        const urls = [
+            {
+                "name": "Process Portal",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a6e3cd56-aa97-3b3d-8426-d75835a374c5"
+            },
+            {
+                "name": "Performance",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.534b94e1-fe84-4ea4-8362-983fc9e3e057"
+            },
+            {
+                "name": "Discover UI Sample",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.d367c75b-45ea-4dcf-a483-547ad03d6dcb"
+            },
+            {
+                "name": "Procurement Sample",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e36f0dc3-9077-4c56-b125-63dcb8e4ae3f"
+            },
+            {
+                "name": "Sample TWX",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.2fc661c8-0c0e-45de-a1af-aedd8d8a49e9"
+            },
+            {
+                "name": "BBO - User Management",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e7bc3324-cc95-4344-8033-d77f0a52f12d"
+            },
+            {
+                "name": "development playground",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.7fdc8b84-6e63-41fb-b42d-190651bc1cea"
+            },
+            {
+                "name": "dev playground",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.dce9df70-b63b-4c71-a9a2-a83a5e2c0d38"
+            },
+            {
+                "name": "Online Transfer/Trigger Interbank Transfer BIFAST & GPN (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.1622c4d3-6a23-4d89-8698-9f903467fd68"
+            },
+            {
+                "name": "VA Database at 3rd Party & Database at Bank - VA Inquiry (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.4b00c0ec-ffd1-4193-9d7b-a9725ab76f5c"
+            },
+            {
+                "name": "VA Database at 3rd Party & Database at Bank - VA Payment (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.eaa289ae-be82-4018-91fc-9ae898e685be"
+            },
+            {
+                "name": "BBO - Reporting",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a159ce4f-fb84-4752-96e9-028f1d51a151"
+            },
+            {
+                "name": "BBO - Audit Trail",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.639e6cc4-bb7f-4d2c-9545-c08f13a89f38"
+            },
+            {
+                "name": "BBO - Approval List",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.7a3cada2-c227-4cfc-8299-782a648b8499"
+            },
+            {
+                "name": "BBO - Master Parameter",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.cd209902-65a2-46a1-abb1-635953bdf013"
+            },
+            {
+                "name": "BBO - Corporate Management",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.9d70e63a-cf9b-47b6-8e5e-f8f43107687c"
+            },
+            {
+                "name": "CO - Credentials",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.f744f9ff-56ad-4488-a238-28f3400c1bf4"
+            },
+            {
+                "name": "History",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.ee7bd596-1077-4a3a-abd7-fb32e2e4cfe5"
+            },
+            {
+                "name": "CO - Limit Customer Portal",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.491546b8-bdb3-4f7a-b802-2d2002f1c1b9"
+            },
+            {
+                "name": "CO - Customer Transaction Dashboard",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.9332ac22-df21-429b-aecd-0e4756ef09fe"
+            },
+            {
+                "name": "BBO - Service Master",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.90cc96f1-023c-4807-963c-6329a65edb7f"
+            },
+            {
+                "name": "BBO - End Point Registration BIN",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.ad8ae189-db74-486f-bf21-30ec6909b00d"
+            },
+            {
+                "name": "BBO - E-Chain Distributor Master",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.65b0ab16-39c8-44ca-a2e7-cb96cd4bcd4d"
+            },
+            {
+                "name": "BBO - FDS Blacklist",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.15dd8709-6a5e-44b7-ba8f-391e7dc2822c"
+            },
+            {
+                "name": "Overbooking/Trigger Intrabank Transfer (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.12b05583-eebc-40c4-a59b-9e71e4b6a880"
+            },
+            {
+                "name": "BBO - Transaction Monitoring",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a5b761a8-d0b1-4b3d-b1e7-849f7f2b4440"
+            },
+            {
+                "name": "CO - Approval List",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e9f838ad-2fde-444e-92ca-b7e280c5dd90"
+            },
+            {
+                "name": "Trigger Transfer SKN (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a3077d3c-01fb-46c4-9bac-1408ea3e9070"
+            },
+            {
+                "name": "BBO - Scheduler",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e4b673fc-d80e-488d-9233-908cccb147c6"
+            },
+            {
+                "name": "CO - User Management Portal",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.b1c2aee3-f5ab-4337-9728-293bac2b1e01"
+            },
+            {
+                "name": "BBO - Template Email",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.ed9db09a-d391-49b0-a637-4824d6fcc26b"
+            },
+            {
+                "name": "Transaction Status Inquiry (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.02d646fc-9030-415b-84a7-9edd03c72ccc"
+            },
+            {
+                "name": "External Account Inquiry (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.2fc25db3-0153-4c2b-99a1-bb77a5125d81"
+            },
+            {
+                "name": "Internal Account Inquiry (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.9d60ce8f-01dd-4974-af99-2db207641164"
+            },
+            {
+                "name": "BBO - Homepage",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.4a3788c7-ab8e-44ab-9fac-6d32e24e676a"
+            },
+            {
+                "name": "Balance Inquiry (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.3f49fb0d-c155-4185-a3e5-fa88caff1561"
+            },
+            {
+                "name": "CO - Homepage",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.8c0ccf32-a889-43e2-b439-a181bb6210c9"
+            },
+            {
+                "name": "CO - Bukti Penerimaan Negara",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.39c2cc12-db12-4b8a-93b8-6ae52d9bd90a"
+            },
+            {
+                "name": "Cash 360",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.c79066fd-d8e2-437e-899d-9a2b67f4c111"
+            },
+            {
+                "name": "Tax Payment Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.1c2dcb01-6fb7-45d6-87d6-2da09defa921"
+            },
+            {
+                "name": "Tax Payment",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.1865fa67-997c-477c-885f-01c433d3eb77"
+            },
+            {
+                "name": "Create Billing Tax",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.c5f53418-7d98-4f39-96c2-137215ea94ea"
+            },
+            {
+                "name": "DAO Notification RDN/RDK/RDL",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.105e4779-5953-4939-8183-0496edcd6034"
+            },
+            {
+                "name": "BPJS TK",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.730a32a8-0f15-40e3-88bf-21479c6b9f3e"
+            },
+            {
+                "name": "BPJS TK Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.374cba45-98b7-4023-a73e-765443e5fee1"
+            },
+            {
+                "name": "BPJS TK Payment",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.755f120a-3cce-42b0-848e-af03609b2d07"
+            },
+            {
+                "name": "Bulk VA Creation & Maintenance Thru API Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.63395b34-1ef3-4c42-8781-20b469f5e681"
+            },
+            {
+                "name": "CO - Download Report",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.57b1bf15-d502-4a24-aca2-b0b828d329b1"
+            },
+            {
+                "name": "VA Payment Inquiry Status (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e0aef9d9-2781-4aaa-89b2-e2b54905bb72"
+            },
+            {
+                "name": "test",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a7ee23fe-add1-4ad2-acbb-9c95958c18a4"
+            },
+            {
+                "name": "Send Batch to FDS",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.3bbc7ec6-1967-4dec-ad4d-bd43a5ec7331"
+            },
+            {
+                "name": "Buyer Seller Account E-Chain Distributor & E- factoring",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.211b490a-7193-48a9-99bb-4f9bdeaa721f"
+            },
+            {
+                "name": "E-Chain Release",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.912b504c-ec0e-4bdd-8b5a-1fa4422621ae"
+            },
+            {
+                "name": "E-Chain – Hold Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.d9c3a0ce-6f37-42dd-be52-6adabbf2ec9a"
+            },
+            {
+                "name": "E-Chain – Hold",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.9b0dc913-ac42-4ce8-8ebe-ed3bd57a173e"
+            },
+            {
+                "name": "E-Chain - Direct Debit",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.133bc59f-e4e6-46c1-9904-76477875a6a2"
+            },
+            {
+                "name": "E-Chain – Cancel Hold",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.b578598d-9453-4792-b77f-6fe94cd0cad2"
+            },
+            {
+                "name": "E-Chain - Direct Transfer",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.23dcf871-5b69-4e6f-b8f2-43b8402ad49b"
+            },
+            {
+                "name": "ISO File",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a4213d03-e6e6-4c03-b890-dd2cea15d0cd"
+            },
+            {
+                "name": "E-Chain – Inquiry Status Transfer",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.72428031-afe8-4365-b781-b74cd32d5e21"
+            },
+            {
+                "name": "CO - Audit Trail Customer",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.d98c8754-6625-4bb1-a9d3-77aff2a29446"
+            },
+            {
+                "name": "Trigger Transfer RTGS (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.2df8d475-01ec-418a-b8b4-918b151c1ee8"
+            },
+            {
+                "name": "Multi debit - Thru API Bulk Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.337f1fbd-d77a-421e-9ac9-ffc5a31743cf"
+            },
+            {
+                "name": "E-Factoring – Inquiry Facility Report",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.3d2e6741-49a1-469b-a287-0282d162e558"
+            },
+            {
+                "name": "Bulk - Thru API Bulk Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.8bb63c63-3dd0-4f1d-903d-c0e961b1cef4"
+            },
+            {
+                "name": "test-trx",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.5422d375-a32b-48ea-9d44-c85608962610"
+            },
+            {
+                "name": "KSEI: Account Opening",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.5d2ca790-d7e2-4c2c-9429-b702568aa03d"
+            },
+            {
+                "name": "Bulk - Thru File (Rekpon, Domol, Remittance)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.678d7364-0e33-45bc-af22-4205759e938f"
+            },
+            {
+                "name": "Bulk Thru File (Inhouse,SKN,RTGS,Payrol)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.64916786-2801-4f4d-ab08-8d797348ec84"
+            },
+            {
+                "name": "Multi debit - Thru File",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.1132601f-9643-450a-9cd6-02790206be15"
+            },
+            {
+                "name": "E-Factoring - Cancel E-Factoring",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.010da261-83ea-474c-afcb-dfe2c4c7b93a"
+            },
+            {
+                "name": "KSEI: Account Validation",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.2a2161ad-7b82-4a31-be0f-09fa0e047aaf"
+            },
+            {
+                "name": "E-Chain Distributor – Buyer Account Balance",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.625731dd-c22c-4e8a-b64c-9129d383c8cc"
+            },
+            {
+                "name": "E-Factoring – Inquiry Invoice Status",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.11e2099f-d640-409d-b65a-fb16ec7529b0"
+            },
+            {
+                "name": "E-Chain Distributor - Single",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.c87c1a4f-6d0b-44c7-a9e9-ecd940d510bf"
+            },
+            {
+                "name": "E-chain Distributor - Workflow Incoming / Outgoing Notification",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.232144ac-6ccc-43a4-b23c-673e6bfe4a49"
+            },
+            {
+                "name": "E-Chain Distributor – Bulk",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.d4078b49-cf33-42a9-9e8b-4b492f69f184"
+            },
+            {
+                "name": "E-Chain Distributor - Cancel",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.de045c8d-0e84-46c7-b830-828cf8dce035"
+            },
+            {
+                "name": "Bulk Thru API (Inhouse,SKN,RTGS,Payrol)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.535f9f9f-293d-4d73-8cc9-52c7c9f612f5"
+            },
+            {
+                "name": "E-Factoring - Invoice Submission",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.471ba893-7fa0-4892-bb7a-19ccedbef975"
+            },
+            {
+                "name": "Multi debit - Thru API",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.4e8620eb-0618-4c7d-ae0b-bf7523c0ff54"
+            },
+            {
+                "name": "Bulk – Thru API (Rekpon, Remittance, Domestic Online)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a333ca5e-1a67-4e1a-842a-4a82fcefcb18"
+            },
+            {
+                "name": "E-Chain Distributor - Bulk Status Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a0c07727-1e81-467e-9766-5a4406cd4b96"
+            },
+            {
+                "name": "Sync Merchant",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.45a025f5-bb37-4953-a6ae-dc508574a60f"
+            },
+            {
+                "name": "Transaction History (SNAP)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.f4c65552-ea61-43b8-9be3-ae282cafdf81"
+            },
+            {
+                "name": "Incoming/Outgoing Notification API",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.566af3d0-b861-4112-8f85-7ac5b32855a2"
+            },
+            {
+                "name": "BBO - Master Service Scheduler",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.c749b827-3b35-424b-8a9e-371167ba3727"
+            },
+            {
+                "name": "VA Bulk Creation & Maintenance Thru API",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.1f5939df-6e62-4108-a796-de552ed3cfe3"
+            },
+            {
+                "name": "VA Bulk Creation & Maintenance Thru File",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e3d0103e-f6f9-4da0-958d-eb83f855f90a"
+            },
+            {
+                "name": "Tax Payment Status",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.61bef7c6-61b0-4a50-bc01-ef600491a20a"
+            },
+            {
+                "name": "Performance Test",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.c3d1a3c6-ba67-4ae1-8fbe-4a44e592c830"
+            },
+            {
+                "name": "Download Report",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a6e6bc36-04b5-4a9c-8330-3d117a5934bd"
+            },
+            {
+                "name": "E-Chain Distributor - eDisc Future Immediate",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.018ad311-f4cd-42d4-8b90-d1533b20d6ca"
+            },
+            {
+                "name": "International Fund Transfer",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.261293ed-24af-4250-b9ff-cd60ee88ee03"
+            },
+            {
+                "name": "VA Transaction from DWH",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.b74df4e2-85ae-4473-890b-090cfd05db66"
+            },
+            {
+                "name": "E-Chain -   Hold(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.94e08aeb-fd09-4b28-8e7d-70e7ef7837d9"
+            },
+            {
+                "name": "E-Chain - Hold Inquiry(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.565f9d9a-2127-44c7-9d0a-d5bd83bad15c"
+            },
+            {
+                "name": "BPJS TK Payment (XML) ",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.d46b8b7d-cd5f-499d-bc67-5307497ccf90"
+            },
+            {
+                "name": "E-Chain - Release(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.65449fbc-f1e4-4fee-bb8c-fb8529588317"
+            },
+            {
+                "name": "E-Chain - Inquiry Status Transfer(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.8024784e-b89e-4155-8365-4f676e70be9d"
+            },
+            {
+                "name": "Bulk - Thru API Payment, SKN, RTGS (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.2fedef52-0032-4f92-b883-b207757de5e3"
+            },
+            {
+                "name": "Bulk - Thru API Payroll (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.160aa532-1ef4-432b-961a-1c60271c4490"
+            },
+            {
+                "name": "VA Bulk Creation (XML) ",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.6bb44537-b313-4e05-b302-00f0cdb4bc94"
+            },
+            {
+                "name": "Bulk Multi Debit (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.5953be7e-c17d-4e5f-b8d8-f1f7ec7ee42d"
+            },
+            {
+                "name": "E-Chain - Cancel Hold(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.9e42ec17-1b78-49f6-89f3-a4fdb15fdbd9"
+            },
+            {
+                "name": "E-Chain Distributor - Buyer Account Balance (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.fd6da5b5-d765-41ce-8742-b1c3cb18e3ad"
+            },
+            {
+                "name": "E-Chain Distributor - Cancel(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.8d35d2d0-f62d-4e00-a8c4-cf753ac7faea"
+            },
+            {
+                "name": "E-Chain Distributor - Buyer Facility Report (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.e436a782-1d9d-475c-85d1-6f46e7cdb618"
+            },
+            {
+                "name": "E-Chain Distributor - Single (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.a53880f3-861c-49bc-9005-d0f81fbf813f"
+            },
+            {
+                "name": "E-Chain Distributor - eInvoice Status Inquiry(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.91df28bd-68d2-4233-a011-2e0ce134ad41"
+            },
+            {
+                "name": "E-Chain Distributor - Bulk Inquiry (XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.39fbd2f8-ac76-4812-ab28-5a9ace427c06"
+            },
+            {
+                "name": "E-Chain - Direct Transfer(XML)",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.97814494-b21e-45e6-8810-16ed99c4b1bb"
+            },
+            {
+                "name": "E-Chain Distributor – E-Invoice Status Inquiry",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.56c4703f-25b7-453b-ae6f-d8f895cd9b5e"
+            },
+            {
+                "name": "E-Chain Distributor – Buyer Facility Report",
+                "project": "https://10.23.50.71:9443/WebPD/jsp/bootstrap.jsp?containerRef=2063.bdf5ba7f-51e8-4a5d-9cf7-2eda0672457a"
+            }
+        ]
+        const container = document.createElement('div');
+ 
+        document.body.appendChild(container);
+        const style = document.createElement('style');
+        style.textContent = `
+            .button-link {
+                display: inline-block;
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 14px;
+                color: white;
+                background-color: #007bff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            .button-link:hover {
+                background-color: #0056b3;
+            }
+        `;
+        document.head.appendChild(style);
+
+        urls.forEach(url => {
+            const button = document.createElement('a');
+            button.href = url.project;
+            button.textContent = url.name || url.project;
+            button.target = '_blank';
+            button.className = 'button-link';
+            container.appendChild(button);
+            container.appendChild(document.createElement('br'));
+        });
+    </script>
+</body>
+
+
+
+</html>
